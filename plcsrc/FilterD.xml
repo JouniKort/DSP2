@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project><!--(*
+ *
+ * File: Filter_testaus_2017a.xml
+ *
+ * IEC 61131-3 Structured Text (ST) code generated for subsystem "Filter_testaus_2017a/Lowpass/Filter1"
+ *
+ * Model name                      : Filter_testaus_2017a
+ * Model version                   : 1.22
+ * Model creator                   : Jouni
+ * Model last modified by          : Jouni
+ * Model last modified on          : Mon Apr 30 01:03:36 2018
+ * Model sample time               : 2.2676e-05s
+ * Subsystem name                  : Filter_testaus_2017a/Lowpass/Filter1
+ * Subsystem sample time           : 2.2676e-05s
+ * Simulink PLC Coder version      : 2.3 (R2017a) 16-Feb-2017
+ * ST code generated on            : Mon Apr 30 13:11:22 2018
+ *
+ * Target IDE selection            : Beckhoff TwinCAT 3
+ * Test Bench included             : No
+ *
+ *)
+-->
+   <fileHeader companyName="The Mathworks, Inc." companyURL="www.mathworks.com" contentDescription="" creationDateTime="2018-04-30T13:11:22" productName="Simulink PLC Coder" productRelease="(R2017a)" productVersion="2.3"/>
+   <contentHeader name="Filter_testaus_2017a">
+      <coordinateInfo>
+         <fbd>
+            <scaling x="0" y="0"/>
+         </fbd>
+         <ld>
+            <scaling x="0" y="0"/>
+         </ld>
+         <sfc>
+            <scaling x="0" y="0"/>
+         </sfc>
+      </coordinateInfo>
+   </contentHeader>
+   <types>
+      <dataTypes/>
+      <pous>
+         <pou name="FilterD" pouType="functionBlock">
+            <interface>
+               <inputVars>
+                  <variable name="ssMethodType">
+                     <type>
+                        <SINT/>
+                     </type>
+                  </variable>
+                  <variable name="Input">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+               </inputVars>
+               <outputVars>
+                  <variable name="Output">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+               </outputVars>
+               <localVars>
+                  <variable name="rtb_HeadSum1">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay2_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay3_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay4_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay5_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+               </localVars>
+            </interface>
+            <body>
+               <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+<![CDATA[
+
+CASE ssMethodType OF
+    SS_INITIALIZE: 
+        (* InitializeConditions for Delay: '<S1>/BodyDelay2' *)
+        BodyDelay2_DSTATE := 0.0;
+        (* InitializeConditions for Delay: '<S1>/BodyDelay3' *)
+        BodyDelay3_DSTATE := 0.0;
+        (* InitializeConditions for Delay: '<S1>/BodyDelay4' *)
+        BodyDelay4_DSTATE := 0.0;
+        (* InitializeConditions for Delay: '<S1>/BodyDelay5' *)
+        BodyDelay5_DSTATE := 0.0;
+    SS_STEP: 
+        (* Sum: '<S1>/HeadSum1' incorporates:
+         *  Delay: '<S1>/BodyDelay2'
+         *  Gain: '<S1>/b(1)'
+         *  Inport: '<Root>/Input' *)
+        rtb_HeadSum1 := (0.028 * Input) + BodyDelay2_DSTATE;
+        (* Outport: '<Root>/Output' *)
+        Output := rtb_HeadSum1;
+        (* Update for Delay: '<S1>/BodyDelay2' incorporates:
+         *  Delay: '<S1>/BodyDelay3'
+         *  Gain: '<S1>/a(2)'
+         *  Gain: '<S1>/b(2)'
+         *  Inport: '<Root>/Input'
+         *  Sum: '<S1>/BodyLSum2'
+         *  Sum: '<S1>/BodyRSum2' *)
+        BodyDelay2_DSTATE := ((0.053 * Input) + BodyDelay3_DSTATE) - (-2.026 * rtb_HeadSum1);
+        (* Update for Delay: '<S1>/BodyDelay3' incorporates:
+         *  Delay: '<S1>/BodyDelay4'
+         *  Gain: '<S1>/a(3)'
+         *  Gain: '<S1>/b(3)'
+         *  Inport: '<Root>/Input'
+         *  Sum: '<S1>/BodyLSum3'
+         *  Sum: '<S1>/BodyRSum3' *)
+        BodyDelay3_DSTATE := ((0.071 * Input) + BodyDelay4_DSTATE) - (2.148 * rtb_HeadSum1);
+        (* Update for Delay: '<S1>/BodyDelay4' incorporates:
+         *  Delay: '<S1>/BodyDelay5'
+         *  Gain: '<S1>/a(4)'
+         *  Gain: '<S1>/b(4)'
+         *  Inport: '<Root>/Input'
+         *  Sum: '<S1>/BodyLSum4'
+         *  Sum: '<S1>/BodyRSum4' *)
+        BodyDelay4_DSTATE := ((0.053 * Input) + BodyDelay5_DSTATE) - (-1.159 * rtb_HeadSum1);
+        (* Update for Delay: '<S1>/BodyDelay5' incorporates:
+         *  Gain: '<S1>/a(5)'
+         *  Gain: '<S1>/b(5)'
+         *  Inport: '<Root>/Input'
+         *  Sum: '<S1>/BodyRSum5' *)
+        BodyDelay5_DSTATE := (0.028 * Input) - (0.279 * rtb_HeadSum1);
+END_CASE;
+
+]]>
+</xhtml>
+               </ST>
+            </body>
+         </pou>
+      </pous>
+   </types>
+   <instances>
+      <configurations>
+         <configuration name="Configuration">
+            <resource name="Filter_testaus_2017a_res">
+               <globalVars constant="true">
+                  <variable name="SS_INITIALIZE">
+                     <type>
+                        <SINT/>
+                     </type>
+                     <initialValue>
+                        <simpleValue value="0"/>
+                     </initialValue>
+                  </variable>
+                  <variable name="SS_STEP">
+                     <type>
+                        <SINT/>
+                     </type>
+                     <initialValue>
+                        <simpleValue value="1"/>
+                     </initialValue>
+                  </variable>
+               </globalVars>
+            </resource>
+         </configuration>
+      </configurations>
+   </instances>
+</project>

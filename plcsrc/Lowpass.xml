@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project><!--(*
+ *
+ * File: Filter_testaus_2017a.xml
+ *
+ * IEC 61131-3 Structured Text (ST) code generated for subsystem "Filter_testaus_2017a/Lowpass"
+ *
+ * Model name                      : Filter_testaus_2017a
+ * Model version                   : 1.22
+ * Model creator                   : Jouni
+ * Model last modified by          : Jouni
+ * Model last modified on          : Mon Apr 30 01:03:36 2018
+ * Model sample time               : 2.2676e-05s
+ * Subsystem name                  : Filter_testaus_2017a/Lowpass
+ * Subsystem sample time           : 2.2676e-05s
+ * Simulink PLC Coder version      : 2.3 (R2017a) 16-Feb-2017
+ * ST code generated on            : Mon Apr 30 12:46:51 2018
+ *
+ * Target IDE selection            : Beckhoff TwinCAT 3
+ * Test Bench included             : No
+ *
+ *)
+-->
+   <fileHeader companyName="The Mathworks, Inc." companyURL="www.mathworks.com" contentDescription="" creationDateTime="2018-04-30T12:46:51" productName="Simulink PLC Coder" productRelease="(R2017a)" productVersion="2.3"/>
+   <contentHeader name="Filter_testaus_2017a">
+      <coordinateInfo>
+         <fbd>
+            <scaling x="0" y="0"/>
+         </fbd>
+         <ld>
+            <scaling x="0" y="0"/>
+         </ld>
+         <sfc>
+            <scaling x="0" y="0"/>
+         </sfc>
+      </coordinateInfo>
+   </contentHeader>
+   <types>
+      <dataTypes>
+         <dataType name="creal_T">
+            <baseType>
+               <struct>
+                  <variable name="re">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+               </struct>
+            </baseType>
+         </dataType>
+      </dataTypes>
+      <pous>
+         <pou name="Lowpass" pouType="functionBlock">
+            <interface>
+               <inputVars>
+                  <variable name="ssMethodType">
+                     <type>
+                        <SINT/>
+                     </type>
+                  </variable>
+                  <variable name="In1">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+               </inputVars>
+               <outputVars>
+                  <variable name="Lowpassb">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+               </outputVars>
+               <localVars>
+                  <variable name="idxDelay">
+                     <type>
+                        <DINT/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Gain">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_HeadSum1">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Gain3">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_ComplextoRealImag_o1">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_0">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_1">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_2">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_3">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_4">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_5">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_6">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_7">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_8">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_9">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_a">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_b">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_c">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_d">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_e">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_f">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_g">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_h">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_i">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_j">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_k">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="im_l">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_o">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_b">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_p">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_n">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_h">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_e">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_a">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_j">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_g">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_l">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_oc">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_bb">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_k">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_ef">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_ot">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_ew">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_d">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_om">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_j2">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_on">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="rtb_Sum1_re_i">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="i">
+                     <type>
+                        <DINT/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay2_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay3_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay4_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="BodyDelay5_DSTATE">
+                     <type>
+                        <LREAL/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_o">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_g">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_c">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_om">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_a">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_l">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_gz">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_f">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_e">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_lc">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_ek">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_p">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_ag">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_h">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_oc">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_ee">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_a2">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_or">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_n">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_m">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_omk">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay_DSTATE_a0">
+                     <type>
+                        <derived name="creal_T"/>
+                     </type>
+                  </variable>
+                  <variable name="Delay1_DSTATE">
+                     <type>
+                        <array>
+                           <dimension lower="0" upper="225"/>
+                           <baseType>
+                              <LREAL/>
+                           </baseType>
+                        </array>
+                     </type>
+                  </variable>
+               </localVars>
+            </interface>
+            <body>
+               <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+<![CDATA[
+
+CASE ssMethodType OF
+    SS_INITIALIZE: 
+        (* InitializeConditions for Delay: '<S2>/BodyDelay2' *)
+        BodyDelay2_DSTATE := 0.0;
+        (* InitializeConditions for Delay: '<S3>/Delay1' *)
+
+        FOR i := 0 TO 225 DO 
+            Delay1_DSTATE[i] := 0.0;
+        END_FOR;
+
+        (* End of InitializeConditions for Delay: '<S3>/Delay1' *)
+        
+
+        (* InitializeConditions for Delay: '<S4>/Delay' *)
+        Delay_DSTATE.re := 0.0;
+        Delay_DSTATE.im := 0.0;
+        (* InitializeConditions for Delay: '<S15>/Delay' *)
+        Delay_DSTATE_o.re := 0.0;
+        Delay_DSTATE_o.im := 0.0;
+        (* InitializeConditions for Delay: '<S20>/Delay' *)
+        Delay_DSTATE_g.re := 0.0;
+        Delay_DSTATE_g.im := 0.0;
+        (* InitializeConditions for Delay: '<S21>/Delay' *)
+        Delay_DSTATE_c.re := 0.0;
+        Delay_DSTATE_c.im := 0.0;
+        (* InitializeConditions for Delay: '<S22>/Delay' *)
+        Delay_DSTATE_om.re := 0.0;
+        Delay_DSTATE_om.im := 0.0;
+        (* InitializeConditions for Delay: '<S23>/Delay' *)
+        Delay_DSTATE_a.re := 0.0;
+        Delay_DSTATE_a.im := 0.0;
+        (* InitializeConditions for Delay: '<S24>/Delay' *)
+        Delay_DSTATE_l.re := 0.0;
+        Delay_DSTATE_l.im := 0.0;
+        (* InitializeConditions for Delay: '<S25>/Delay' *)
+        Delay_DSTATE_gz.re := 0.0;
+        Delay_DSTATE_gz.im := 0.0;
+        (* InitializeConditions for Delay: '<S26>/Delay' *)
+        Delay_DSTATE_f.re := 0.0;
+        Delay_DSTATE_f.im := 0.0;
+        (* InitializeConditions for Delay: '<S5>/Delay' *)
+        Delay_DSTATE_e.re := 0.0;
+        Delay_DSTATE_e.im := 0.0;
+        (* InitializeConditions for Delay: '<S6>/Delay' *)
+        Delay_DSTATE_lc.re := 0.0;
+        Delay_DSTATE_lc.im := 0.0;
+        (* InitializeConditions for Delay: '<S7>/Delay' *)
+        Delay_DSTATE_ek.re := 0.0;
+        Delay_DSTATE_ek.im := 0.0;
+        (* InitializeConditions for Delay: '<S8>/Delay' *)
+        Delay_DSTATE_p.re := 0.0;
+        Delay_DSTATE_p.im := 0.0;
+        (* InitializeConditions for Delay: '<S9>/Delay' *)
+        Delay_DSTATE_ag.re := 0.0;
+        Delay_DSTATE_ag.im := 0.0;
+        (* InitializeConditions for Delay: '<S10>/Delay' *)
+        Delay_DSTATE_h.re := 0.0;
+        Delay_DSTATE_h.im := 0.0;
+        (* InitializeConditions for Delay: '<S11>/Delay' *)
+        Delay_DSTATE_oc.re := 0.0;
+        Delay_DSTATE_oc.im := 0.0;
+        (* InitializeConditions for Delay: '<S12>/Delay' *)
+        Delay_DSTATE_ee.re := 0.0;
+        Delay_DSTATE_ee.im := 0.0;
+        (* InitializeConditions for Delay: '<S13>/Delay' *)
+        Delay_DSTATE_a2.re := 0.0;
+        Delay_DSTATE_a2.im := 0.0;
+        (* InitializeConditions for Delay: '<S14>/Delay' *)
+        Delay_DSTATE_or.re := 0.0;
+        Delay_DSTATE_or.im := 0.0;
+        (* InitializeConditions for Delay: '<S16>/Delay' *)
+        Delay_DSTATE_n.re := 0.0;
+        Delay_DSTATE_n.im := 0.0;
+        (* InitializeConditions for Delay: '<S17>/Delay' *)
+        Delay_DSTATE_m.re := 0.0;
+        Delay_DSTATE_m.im := 0.0;
+        (* InitializeConditions for Delay: '<S18>/Delay' *)
+        Delay_DSTATE_omk.re := 0.0;
+        Delay_DSTATE_omk.im := 0.0;
+        (* InitializeConditions for Delay: '<S19>/Delay' *)
+        Delay_DSTATE_a0.re := 0.0;
+        Delay_DSTATE_a0.im := 0.0;
+        (* InitializeConditions for Delay: '<S2>/BodyDelay3' *)
+        BodyDelay3_DSTATE := 0.0;
+        (* InitializeConditions for Delay: '<S2>/BodyDelay4' *)
+        BodyDelay4_DSTATE := 0.0;
+        (* InitializeConditions for Delay: '<S2>/BodyDelay5' *)
+        BodyDelay5_DSTATE := 0.0;
+    SS_STEP: 
+        (* Gain: '<S1>/Gain' incorporates:
+         *  Inport: '<Root>/In1' *)
+        rtb_Gain := 0.75 * In1;
+        (* Sum: '<S2>/HeadSum1' incorporates:
+         *  Delay: '<S2>/BodyDelay2'
+         *  Gain: '<S2>/b(1)' *)
+        rtb_HeadSum1 := (0.028 * rtb_Gain) + BodyDelay2_DSTATE;
+        (* Gain: '<S3>/Gain3' *)
+        rtb_Gain3 := 0.0044247787610619468 * rtb_HeadSum1;
+        (* Sum: '<S3>/Sum2' incorporates:
+         *  Delay: '<S3>/Delay1'
+         *  Gain: '<S3>/Gain2' *)
+        rtb_ComplextoRealImag_o1 := rtb_Gain3 + ( -Delay1_DSTATE[0]);
+        (* Gain: '<S4>/Gain' incorporates:
+         *  Delay: '<S4>/Delay' *)
+        im := (0.99961 * Delay_DSTATE.im) + (0.027798 * Delay_DSTATE.re);
+        (* Sum: '<S4>/Sum1' incorporates:
+         *  Delay: '<S4>/Delay'
+         *  Gain: '<S4>/Gain'
+         *  RealImagToComplex: '<S4>/Real-Imag to Complex' *)
+        rtb_Sum1_re := ((0.99961 * Delay_DSTATE.re) - (0.027798 * Delay_DSTATE.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S15>/Gain' incorporates:
+         *  Delay: '<S15>/Delay' *)
+        im_0 := (0.99845 * Delay_DSTATE_o.im) + (0.055575 * Delay_DSTATE_o.re);
+        (* Sum: '<S15>/Sum1' incorporates:
+         *  Delay: '<S15>/Delay'
+         *  Gain: '<S15>/Gain'
+         *  RealImagToComplex: '<S15>/Real-Imag to Complex' *)
+        rtb_Sum1_re_o := ((0.99845 * Delay_DSTATE_o.re) - (0.055575 * Delay_DSTATE_o.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S20>/Gain' incorporates:
+         *  Delay: '<S20>/Delay' *)
+        im_1 := (0.99652 * Delay_DSTATE_g.im) + (0.083308 * Delay_DSTATE_g.re);
+        (* Sum: '<S20>/Sum1' incorporates:
+         *  Delay: '<S20>/Delay'
+         *  Gain: '<S20>/Gain'
+         *  RealImagToComplex: '<S20>/Real-Imag to Complex' *)
+        rtb_Sum1_re_b := ((0.99652 * Delay_DSTATE_g.re) - (0.083308 * Delay_DSTATE_g.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S21>/Gain' incorporates:
+         *  Delay: '<S21>/Delay' *)
+        im_2 := (0.99382 * Delay_DSTATE_c.im) + (0.11098 * Delay_DSTATE_c.re);
+        (* Sum: '<S21>/Sum1' incorporates:
+         *  Delay: '<S21>/Delay'
+         *  Gain: '<S21>/Gain'
+         *  RealImagToComplex: '<S21>/Real-Imag to Complex' *)
+        rtb_Sum1_re_p := ((0.99382 * Delay_DSTATE_c.re) - (0.11098 * Delay_DSTATE_c.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S22>/Gain' incorporates:
+         *  Delay: '<S22>/Delay' *)
+        im_3 := (0.99035 * Delay_DSTATE_om.im) + (0.13856 * Delay_DSTATE_om.re);
+        (* Sum: '<S22>/Sum1' incorporates:
+         *  Delay: '<S22>/Delay'
+         *  Gain: '<S22>/Gain'
+         *  RealImagToComplex: '<S22>/Real-Imag to Complex' *)
+        rtb_Sum1_re_n := ((0.99035 * Delay_DSTATE_om.re) - (0.13856 * Delay_DSTATE_om.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S23>/Gain' incorporates:
+         *  Delay: '<S23>/Delay' *)
+        im_4 := (0.98612 * Delay_DSTATE_a.im) + (0.16604 * Delay_DSTATE_a.re);
+        (* Sum: '<S23>/Sum1' incorporates:
+         *  Delay: '<S23>/Delay'
+         *  Gain: '<S23>/Gain'
+         *  RealImagToComplex: '<S23>/Real-Imag to Complex' *)
+        rtb_Sum1_re_h := ((0.98612 * Delay_DSTATE_a.re) - (0.16604 * Delay_DSTATE_a.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S24>/Gain' incorporates:
+         *  Delay: '<S24>/Delay' *)
+        im_5 := (0.98112 * Delay_DSTATE_l.im) + (0.19339 * Delay_DSTATE_l.re);
+        (* Sum: '<S24>/Sum1' incorporates:
+         *  Delay: '<S24>/Delay'
+         *  Gain: '<S24>/Gain'
+         *  RealImagToComplex: '<S24>/Real-Imag to Complex' *)
+        rtb_Sum1_re_e := ((0.98112 * Delay_DSTATE_l.re) - (0.19339 * Delay_DSTATE_l.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S25>/Gain' incorporates:
+         *  Delay: '<S25>/Delay' *)
+        im_6 := (0.97537 * Delay_DSTATE_gz.im) + (0.22058 * Delay_DSTATE_gz.re);
+        (* Sum: '<S25>/Sum1' incorporates:
+         *  Delay: '<S25>/Delay'
+         *  Gain: '<S25>/Gain'
+         *  RealImagToComplex: '<S25>/Real-Imag to Complex' *)
+        rtb_Sum1_re_a := ((0.97537 * Delay_DSTATE_gz.re) - (0.22058 * Delay_DSTATE_gz.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S26>/Gain' incorporates:
+         *  Delay: '<S26>/Delay' *)
+        im_7 := (0.96886 * Delay_DSTATE_f.im) + (0.24761 * Delay_DSTATE_f.re);
+        (* Sum: '<S26>/Sum1' incorporates:
+         *  Delay: '<S26>/Delay'
+         *  Gain: '<S26>/Gain'
+         *  RealImagToComplex: '<S26>/Real-Imag to Complex' *)
+        rtb_Sum1_re_j := ((0.96886 * Delay_DSTATE_f.re) - (0.24761 * Delay_DSTATE_f.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S5>/Gain' incorporates:
+         *  Delay: '<S5>/Delay' *)
+        im_8 := (0.9616 * Delay_DSTATE_e.im) + (0.27445 * Delay_DSTATE_e.re);
+        (* Sum: '<S5>/Sum1' incorporates:
+         *  Delay: '<S5>/Delay'
+         *  Gain: '<S5>/Gain'
+         *  RealImagToComplex: '<S5>/Real-Imag to Complex' *)
+        rtb_Sum1_re_g := ((0.9616 * Delay_DSTATE_e.re) - (0.27445 * Delay_DSTATE_e.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S6>/Gain' incorporates:
+         *  Delay: '<S6>/Delay' *)
+        im_9 := (0.9536 * Delay_DSTATE_lc.im) + (0.30107 * Delay_DSTATE_lc.re);
+        (* Sum: '<S6>/Sum1' incorporates:
+         *  Delay: '<S6>/Delay'
+         *  Gain: '<S6>/Gain'
+         *  RealImagToComplex: '<S6>/Real-Imag to Complex' *)
+        rtb_Sum1_re_l := ((0.9536 * Delay_DSTATE_lc.re) - (0.30107 * Delay_DSTATE_lc.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S7>/Gain' incorporates:
+         *  Delay: '<S7>/Delay' *)
+        im_a := (0.94486 * Delay_DSTATE_ek.im) + (0.32747 * Delay_DSTATE_ek.re);
+        (* Sum: '<S7>/Sum1' incorporates:
+         *  Delay: '<S7>/Delay'
+         *  Gain: '<S7>/Gain'
+         *  RealImagToComplex: '<S7>/Real-Imag to Complex' *)
+        rtb_Sum1_re_oc := ((0.94486 * Delay_DSTATE_ek.re) - (0.32747 * Delay_DSTATE_ek.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S8>/Gain' incorporates:
+         *  Delay: '<S8>/Delay' *)
+        im_b := (0.9616 * Delay_DSTATE_p.im) + (-0.27445 * Delay_DSTATE_p.re);
+        (* Sum: '<S8>/Sum1' incorporates:
+         *  Delay: '<S8>/Delay'
+         *  Gain: '<S8>/Gain'
+         *  RealImagToComplex: '<S8>/Real-Imag to Complex' *)
+        rtb_Sum1_re_bb := ((0.9616 * Delay_DSTATE_p.re) - (-0.27445 * Delay_DSTATE_p.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S9>/Gain' incorporates:
+         *  Delay: '<S9>/Delay' *)
+        im_c := (0.96886 * Delay_DSTATE_ag.im) + (-0.24761 * Delay_DSTATE_ag.re);
+        (* Sum: '<S9>/Sum1' incorporates:
+         *  Delay: '<S9>/Delay'
+         *  Gain: '<S9>/Gain'
+         *  RealImagToComplex: '<S9>/Real-Imag to Complex' *)
+        rtb_Sum1_re_k := ((0.96886 * Delay_DSTATE_ag.re) - (-0.24761 * Delay_DSTATE_ag.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S10>/Gain' incorporates:
+         *  Delay: '<S10>/Delay' *)
+        im_d := (0.97537 * Delay_DSTATE_h.im) + (-0.22058 * Delay_DSTATE_h.re);
+        (* Sum: '<S10>/Sum1' incorporates:
+         *  Delay: '<S10>/Delay'
+         *  Gain: '<S10>/Gain'
+         *  RealImagToComplex: '<S10>/Real-Imag to Complex' *)
+        rtb_Sum1_re_ef := ((0.97537 * Delay_DSTATE_h.re) - (-0.22058 * Delay_DSTATE_h.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S11>/Gain' incorporates:
+         *  Delay: '<S11>/Delay' *)
+        im_e := (0.98112 * Delay_DSTATE_oc.im) + (-0.19339 * Delay_DSTATE_oc.re);
+        (* Sum: '<S11>/Sum1' incorporates:
+         *  Delay: '<S11>/Delay'
+         *  Gain: '<S11>/Gain'
+         *  RealImagToComplex: '<S11>/Real-Imag to Complex' *)
+        rtb_Sum1_re_ot := ((0.98112 * Delay_DSTATE_oc.re) - (-0.19339 * Delay_DSTATE_oc.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S12>/Gain' incorporates:
+         *  Delay: '<S12>/Delay' *)
+        im_f := (0.98612 * Delay_DSTATE_ee.im) + (-0.16604 * Delay_DSTATE_ee.re);
+        (* Sum: '<S12>/Sum1' incorporates:
+         *  Delay: '<S12>/Delay'
+         *  Gain: '<S12>/Gain'
+         *  RealImagToComplex: '<S12>/Real-Imag to Complex' *)
+        rtb_Sum1_re_ew := ((0.98612 * Delay_DSTATE_ee.re) - (-0.16604 * Delay_DSTATE_ee.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S13>/Gain' incorporates:
+         *  Delay: '<S13>/Delay' *)
+        im_g := (0.99035 * Delay_DSTATE_a2.im) + (-0.13856 * Delay_DSTATE_a2.re);
+        (* Sum: '<S13>/Sum1' incorporates:
+         *  Delay: '<S13>/Delay'
+         *  Gain: '<S13>/Gain'
+         *  RealImagToComplex: '<S13>/Real-Imag to Complex' *)
+        rtb_Sum1_re_d := ((0.99035 * Delay_DSTATE_a2.re) - (-0.13856 * Delay_DSTATE_a2.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S14>/Gain' incorporates:
+         *  Delay: '<S14>/Delay' *)
+        im_h := (0.99382 * Delay_DSTATE_or.im) + (-0.11098 * Delay_DSTATE_or.re);
+        (* Sum: '<S14>/Sum1' incorporates:
+         *  Delay: '<S14>/Delay'
+         *  Gain: '<S14>/Gain'
+         *  RealImagToComplex: '<S14>/Real-Imag to Complex' *)
+        rtb_Sum1_re_om := ((0.99382 * Delay_DSTATE_or.re) - (-0.11098 * Delay_DSTATE_or.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S16>/Gain' incorporates:
+         *  Delay: '<S16>/Delay' *)
+        im_i := (0.99652 * Delay_DSTATE_n.im) + (-0.083308 * Delay_DSTATE_n.re);
+        (* Sum: '<S16>/Sum1' incorporates:
+         *  Delay: '<S16>/Delay'
+         *  Gain: '<S16>/Gain'
+         *  RealImagToComplex: '<S16>/Real-Imag to Complex' *)
+        rtb_Sum1_re_j2 := ((0.99652 * Delay_DSTATE_n.re) - (-0.083308 * Delay_DSTATE_n.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S17>/Gain' incorporates:
+         *  Delay: '<S17>/Delay' *)
+        im_j := (0.99845 * Delay_DSTATE_m.im) + (-0.055575 * Delay_DSTATE_m.re);
+        (* Sum: '<S17>/Sum1' incorporates:
+         *  Delay: '<S17>/Delay'
+         *  Gain: '<S17>/Gain'
+         *  RealImagToComplex: '<S17>/Real-Imag to Complex' *)
+        rtb_Sum1_re_on := ((0.99845 * Delay_DSTATE_m.re) - (-0.055575 * Delay_DSTATE_m.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S18>/Gain' incorporates:
+         *  Delay: '<S18>/Delay' *)
+        im_k := (0.99961 * Delay_DSTATE_omk.im) + (-0.027798 * Delay_DSTATE_omk.re);
+        (* Sum: '<S18>/Sum1' incorporates:
+         *  Delay: '<S18>/Delay'
+         *  Gain: '<S18>/Gain'
+         *  RealImagToComplex: '<S18>/Real-Imag to Complex' *)
+        rtb_Sum1_re_i := ((0.99961 * Delay_DSTATE_omk.re) - (-0.027798 * Delay_DSTATE_omk.im)) + rtb_ComplextoRealImag_o1;
+        (* Gain: '<S19>/Gain' incorporates:
+         *  Delay: '<S19>/Delay' *)
+        im_l := (-2.4493E-16 * Delay_DSTATE_a0.re) + Delay_DSTATE_a0.im;
+        (* Sum: '<S19>/Sum1' incorporates:
+         *  Delay: '<S19>/Delay'
+         *  Gain: '<S19>/Gain'
+         *  RealImagToComplex: '<S19>/Real-Imag to Complex' *)
+        rtb_ComplextoRealImag_o1 := (Delay_DSTATE_a0.re - (-2.4493E-16 * Delay_DSTATE_a0.im)) + rtb_ComplextoRealImag_o1;
+        (* Outport: '<Root>/Lowpassb' incorporates:
+         *  Gain: '<S10>/GainH'
+         *  Gain: '<S11>/GainH'
+         *  Gain: '<S12>/GainH'
+         *  Gain: '<S13>/GainH'
+         *  Gain: '<S14>/GainH'
+         *  Gain: '<S15>/GainH'
+         *  Gain: '<S16>/GainH'
+         *  Gain: '<S17>/GainH'
+         *  Gain: '<S18>/GainH'
+         *  Gain: '<S19>/GainH'
+         *  Gain: '<S20>/GainH'
+         *  Gain: '<S21>/GainH'
+         *  Gain: '<S22>/GainH'
+         *  Gain: '<S23>/GainH'
+         *  Gain: '<S24>/GainH'
+         *  Gain: '<S25>/GainH'
+         *  Gain: '<S26>/GainH'
+         *  Gain: '<S5>/GainH'
+         *  Gain: '<S6>/GainH'
+         *  Gain: '<S7>/GainH'
+         *  Gain: '<S8>/GainH'
+         *  Gain: '<S9>/GainH'
+         *  Sum: '<S10>/Sum1'
+         *  Sum: '<S11>/Sum1'
+         *  Sum: '<S12>/Sum1'
+         *  Sum: '<S13>/Sum1'
+         *  Sum: '<S14>/Sum1'
+         *  Sum: '<S15>/Sum1'
+         *  Sum: '<S16>/Sum1'
+         *  Sum: '<S17>/Sum1'
+         *  Sum: '<S18>/Sum1'
+         *  Sum: '<S19>/Sum1'
+         *  Sum: '<S1>/Sum2'
+         *  Sum: '<S20>/Sum1'
+         *  Sum: '<S21>/Sum1'
+         *  Sum: '<S22>/Sum1'
+         *  Sum: '<S23>/Sum1'
+         *  Sum: '<S24>/Sum1'
+         *  Sum: '<S25>/Sum1'
+         *  Sum: '<S26>/Sum1'
+         *  Sum: '<S3>/Sum'
+         *  Sum: '<S4>/Sum1'
+         *  Sum: '<S5>/Sum1'
+         *  Sum: '<S6>/Sum1'
+         *  Sum: '<S7>/Sum1'
+         *  Sum: '<S8>/Sum1'
+         *  Sum: '<S9>/Sum1' *)
+        Lowpassb := ((((((((((((((((((((((((0.70956 * rtb_Sum1_re_o) - (-0.70465 * im_0)) + rtb_Sum1_re) + ((0.0069504 * rtb_Sum1_re_b) - (-0.99998 * im_1))) + ((-0.6997 * rtb_Sum1_re_p) - (-0.71444 * im_2))) + ((-0.9999 * rtb_Sum1_re_n) - (-0.0139 * im_3))) + ((-0.71929 * rtb_Sum1_re_h) - (0.69471 * im_4))) + ((-0.02085 * rtb_Sum1_re_e) - (0.99978 * im_5))) + ((0.6897 * rtb_Sum1_re_a) - (0.7241 * im_6))) + ((0.99961 * rtb_Sum1_re_j) - (0.027798 * im_7))) + ((0.72887 * rtb_Sum1_re_g) - (-0.68465 * im_8))) + ((0.034745 * rtb_Sum1_re_l) - (-0.9994 * im_9))) + ((-0.67957 * rtb_Sum1_re_oc) - (-0.73361 * im_a))) + ((-0.67957 * rtb_Sum1_re_bb) - (0.73361 * im_b))) + ((0.034745 * rtb_Sum1_re_k) - (0.9994 * im_c))) + ((0.72887 * rtb_Sum1_re_ef) - (0.68465 * im_d))) + ((0.99961 * rtb_Sum1_re_ot) - (-0.027798 * im_e))) + ((0.6897 * rtb_Sum1_re_ew) - (-0.7241 * im_f))) + ((-0.02085 * rtb_Sum1_re_d) - (-0.99978 * im_g))) + ((-0.71929 * rtb_Sum1_re_om) - (-0.69471 * im_h))) + ((-0.9999 * rtb_Sum1_re_j2) - (0.0139 * im_i))) + ((-0.6997 * rtb_Sum1_re_on) - (0.71444 * im_j))) + ((0.0069504 * rtb_Sum1_re_i) - (0.99998 * im_k))) + ((0.70956 * rtb_ComplextoRealImag_o1) - (0.70465 * im_l))) + ((((((((((((((((((((((((0.70956 * im_0) + (-0.70465 * rtb_Sum1_re_o)) + im) + ((0.0069504 * im_1) + (-0.99998 * rtb_Sum1_re_b))) + ((-0.6997 * im_2) + (-0.71444 * rtb_Sum1_re_p))) + ((-0.9999 * im_3) + (-0.0139 * rtb_Sum1_re_n))) + ((-0.71929 * im_4) + (0.69471 * rtb_Sum1_re_h))) + ((-0.02085 * im_5) + (0.99978 * rtb_Sum1_re_e))) + ((0.6897 * im_6) + (0.7241 * rtb_Sum1_re_a))) + ((0.99961 * im_7) + (0.027798 * rtb_Sum1_re_j))) + ((0.72887 * im_8) + (-0.68465 * rtb_Sum1_re_g))) + ((0.034745 * im_9) + (-0.9994 * rtb_Sum1_re_l))) + ((-0.67957 * im_a) + (-0.73361 * rtb_Sum1_re_oc))) + ((-0.67957 * im_b) + (0.73361 * rtb_Sum1_re_bb))) + ((0.034745 * im_c) + (0.9994 * rtb_Sum1_re_k))) + ((0.72887 * im_d) + (0.68465 * rtb_Sum1_re_ef))) + ((0.99961 * im_e) + (-0.027798 * rtb_Sum1_re_ot))) + ((0.6897 * im_f) + (-0.7241 * rtb_Sum1_re_ew))) + ((-0.02085 * im_g) + (-0.99978 * rtb_Sum1_re_d))) + ((-0.71929 * im_h) + (-0.69471 * rtb_Sum1_re_om))) + ((-0.9999 * im_i) + (0.0139 * rtb_Sum1_re_j2))) + ((-0.6997 * im_j) + (0.71444 * rtb_Sum1_re_on))) + ((0.0069504 * im_k) + (0.99998 * rtb_Sum1_re_i))) + ((0.70956 * im_l) + (0.70465 * rtb_ComplextoRealImag_o1)));
+        (* Update for Delay: '<S2>/BodyDelay2' incorporates:
+         *  Delay: '<S2>/BodyDelay3'
+         *  Gain: '<S2>/a(2)'
+         *  Gain: '<S2>/b(2)'
+         *  Sum: '<S2>/BodyLSum2'
+         *  Sum: '<S2>/BodyRSum2' *)
+        BodyDelay2_DSTATE := ((0.053 * rtb_Gain) + BodyDelay3_DSTATE) - (-2.026 * rtb_HeadSum1);
+        (* Update for Delay: '<S3>/Delay1' *)
+
+        FOR idxDelay := 0 TO 224 DO 
+            Delay1_DSTATE[idxDelay] := Delay1_DSTATE[idxDelay + 1];
+        END_FOR;
+
+        Delay1_DSTATE[225] := rtb_Gain3;
+        (* End of Update for Delay: '<S3>/Delay1' *)
+        
+
+        (* Update for Delay: '<S4>/Delay' incorporates:
+         *  Sum: '<S4>/Sum1' *)
+        Delay_DSTATE.re := rtb_Sum1_re;
+        Delay_DSTATE.im := im;
+        (* Update for Delay: '<S15>/Delay' incorporates:
+         *  Sum: '<S15>/Sum1' *)
+        Delay_DSTATE_o.re := rtb_Sum1_re_o;
+        Delay_DSTATE_o.im := im_0;
+        (* Update for Delay: '<S20>/Delay' incorporates:
+         *  Sum: '<S20>/Sum1' *)
+        Delay_DSTATE_g.re := rtb_Sum1_re_b;
+        Delay_DSTATE_g.im := im_1;
+        (* Update for Delay: '<S21>/Delay' incorporates:
+         *  Sum: '<S21>/Sum1' *)
+        Delay_DSTATE_c.re := rtb_Sum1_re_p;
+        Delay_DSTATE_c.im := im_2;
+        (* Update for Delay: '<S22>/Delay' incorporates:
+         *  Sum: '<S22>/Sum1' *)
+        Delay_DSTATE_om.re := rtb_Sum1_re_n;
+        Delay_DSTATE_om.im := im_3;
+        (* Update for Delay: '<S23>/Delay' incorporates:
+         *  Sum: '<S23>/Sum1' *)
+        Delay_DSTATE_a.re := rtb_Sum1_re_h;
+        Delay_DSTATE_a.im := im_4;
+        (* Update for Delay: '<S24>/Delay' incorporates:
+         *  Sum: '<S24>/Sum1' *)
+        Delay_DSTATE_l.re := rtb_Sum1_re_e;
+        Delay_DSTATE_l.im := im_5;
+        (* Update for Delay: '<S25>/Delay' incorporates:
+         *  Sum: '<S25>/Sum1' *)
+        Delay_DSTATE_gz.re := rtb_Sum1_re_a;
+        Delay_DSTATE_gz.im := im_6;
+        (* Update for Delay: '<S26>/Delay' incorporates:
+         *  Sum: '<S26>/Sum1' *)
+        Delay_DSTATE_f.re := rtb_Sum1_re_j;
+        Delay_DSTATE_f.im := im_7;
+        (* Update for Delay: '<S5>/Delay' incorporates:
+         *  Sum: '<S5>/Sum1' *)
+        Delay_DSTATE_e.re := rtb_Sum1_re_g;
+        Delay_DSTATE_e.im := im_8;
+        (* Update for Delay: '<S6>/Delay' incorporates:
+         *  Sum: '<S6>/Sum1' *)
+        Delay_DSTATE_lc.re := rtb_Sum1_re_l;
+        Delay_DSTATE_lc.im := im_9;
+        (* Update for Delay: '<S7>/Delay' incorporates:
+         *  Sum: '<S7>/Sum1' *)
+        Delay_DSTATE_ek.re := rtb_Sum1_re_oc;
+        Delay_DSTATE_ek.im := im_a;
+        (* Update for Delay: '<S8>/Delay' incorporates:
+         *  Sum: '<S8>/Sum1' *)
+        Delay_DSTATE_p.re := rtb_Sum1_re_bb;
+        Delay_DSTATE_p.im := im_b;
+        (* Update for Delay: '<S9>/Delay' incorporates:
+         *  Sum: '<S9>/Sum1' *)
+        Delay_DSTATE_ag.re := rtb_Sum1_re_k;
+        Delay_DSTATE_ag.im := im_c;
+        (* Update for Delay: '<S10>/Delay' incorporates:
+         *  Sum: '<S10>/Sum1' *)
+        Delay_DSTATE_h.re := rtb_Sum1_re_ef;
+        Delay_DSTATE_h.im := im_d;
+        (* Update for Delay: '<S11>/Delay' incorporates:
+         *  Sum: '<S11>/Sum1' *)
+        Delay_DSTATE_oc.re := rtb_Sum1_re_ot;
+        Delay_DSTATE_oc.im := im_e;
+        (* Update for Delay: '<S12>/Delay' incorporates:
+         *  Sum: '<S12>/Sum1' *)
+        Delay_DSTATE_ee.re := rtb_Sum1_re_ew;
+        Delay_DSTATE_ee.im := im_f;
+        (* Update for Delay: '<S13>/Delay' incorporates:
+         *  Sum: '<S13>/Sum1' *)
+        Delay_DSTATE_a2.re := rtb_Sum1_re_d;
+        Delay_DSTATE_a2.im := im_g;
+        (* Update for Delay: '<S14>/Delay' incorporates:
+         *  Sum: '<S14>/Sum1' *)
+        Delay_DSTATE_or.re := rtb_Sum1_re_om;
+        Delay_DSTATE_or.im := im_h;
+        (* Update for Delay: '<S16>/Delay' incorporates:
+         *  Sum: '<S16>/Sum1' *)
+        Delay_DSTATE_n.re := rtb_Sum1_re_j2;
+        Delay_DSTATE_n.im := im_i;
+        (* Update for Delay: '<S17>/Delay' incorporates:
+         *  Sum: '<S17>/Sum1' *)
+        Delay_DSTATE_m.re := rtb_Sum1_re_on;
+        Delay_DSTATE_m.im := im_j;
+        (* Update for Delay: '<S18>/Delay' incorporates:
+         *  Sum: '<S18>/Sum1' *)
+        Delay_DSTATE_omk.re := rtb_Sum1_re_i;
+        Delay_DSTATE_omk.im := im_k;
+        (* Update for Delay: '<S19>/Delay' incorporates:
+         *  Sum: '<S19>/Sum1' *)
+        Delay_DSTATE_a0.re := rtb_ComplextoRealImag_o1;
+        Delay_DSTATE_a0.im := im_l;
+        (* Update for Delay: '<S2>/BodyDelay3' incorporates:
+         *  Delay: '<S2>/BodyDelay4'
+         *  Gain: '<S2>/a(3)'
+         *  Gain: '<S2>/b(3)'
+         *  Sum: '<S2>/BodyLSum3'
+         *  Sum: '<S2>/BodyRSum3' *)
+        BodyDelay3_DSTATE := ((0.071 * rtb_Gain) + BodyDelay4_DSTATE) - (2.148 * rtb_HeadSum1);
+        (* Update for Delay: '<S2>/BodyDelay4' incorporates:
+         *  Delay: '<S2>/BodyDelay5'
+         *  Gain: '<S2>/a(4)'
+         *  Gain: '<S2>/b(4)'
+         *  Sum: '<S2>/BodyLSum4'
+         *  Sum: '<S2>/BodyRSum4' *)
+        BodyDelay4_DSTATE := ((0.053 * rtb_Gain) + BodyDelay5_DSTATE) - (-1.159 * rtb_HeadSum1);
+        (* Update for Delay: '<S2>/BodyDelay5' incorporates:
+         *  Gain: '<S2>/a(5)'
+         *  Gain: '<S2>/b(5)'
+         *  Sum: '<S2>/BodyRSum5' *)
+        BodyDelay5_DSTATE := (0.028 * rtb_Gain) - (0.279 * rtb_HeadSum1);
+END_CASE;
+
+]]>
+</xhtml>
+               </ST>
+            </body>
+         </pou>
+      </pous>
+   </types>
+   <instances>
+      <configurations>
+         <configuration name="Configuration">
+            <resource name="Filter_testaus_2017a_res">
+               <globalVars constant="true">
+                  <variable name="SS_INITIALIZE">
+                     <type>
+                        <SINT/>
+                     </type>
+                     <initialValue>
+                        <simpleValue value="0"/>
+                     </initialValue>
+                  </variable>
+                  <variable name="SS_STEP">
+                     <type>
+                        <SINT/>
+                     </type>
+                     <initialValue>
+                        <simpleValue value="1"/>
+                     </initialValue>
+                  </variable>
+               </globalVars>
+            </resource>
+         </configuration>
+      </configurations>
+   </instances>
+</project>
